@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Recursive Function
+
 unsigned long long factorialRecursive(int n) {
     if (n == 0 || n == 1)
         return 1;
@@ -8,7 +8,7 @@ unsigned long long factorialRecursive(int n) {
         return n * factorialRecursive(n - 1);
 }
 
-// Iterative Function
+
 unsigned long long factorialIterative(int n) {
     unsigned long long fact = 1;
     int i;
@@ -39,7 +39,7 @@ int main() {
         printf("Enter a number: ");
         scanf("%d", &num);
 
-        // Edge Case Handling
+      
         if(num < 0) {
             printf("Error: Factorial of negative numbers is not defined.\n");
             continue;
