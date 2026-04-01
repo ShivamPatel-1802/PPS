@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-// Function declarations
 void sortArray();
 void searchArray();
 void stringConcatenate();
@@ -51,8 +50,6 @@ int main()
     }
 }
 
-
-// Function to sort array
 void sortArray()
 {
     int a[10], n, i, j, temp;
@@ -87,8 +84,6 @@ void sortArray()
     printf("\n");
 }
 
-
-// Function to search element
 void searchArray()
 {
     int a[10], n, i, key, found = 0;
@@ -121,8 +116,6 @@ void searchArray()
     }
 }
 
-
-// Function for string concatenation
 void stringConcatenate()
 {
     char s1[50], s2[50];
@@ -139,7 +132,6 @@ void stringConcatenate()
 }
 
 
-// Function for string comparison
 void stringCompare()
 {
     char s1[50], s2[50];
