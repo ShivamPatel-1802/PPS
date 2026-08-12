@@ -1,56 +1,56 @@
 #include <stdio.h>
-
 #define MAX 100
 
-int stack[MAX];
-int top = -1;
+int stack[MAX], top = -1;
 
-
-int push(int value)
+int push(int x)
 {
     if (top == MAX - 1)
-        return -1;     
-
-    stack[++top] = value;
-    return 1;           
+        return -1;
+    stack[++top] = x;
+    return 1;
 }
 
 int pop()
 {
     if (top == -1)
-        return -1;      
-
+        return -1;
     return stack[top--];
 }
-
 
 int peek()
 {
     if (top == -1)
-        return -1;     
-
+        return -1;
     return stack[top];
 }
 
-
 int display()
 {
-    if (top == -1)
-        return -1;
-
     for (int i = top; i >= 0; i--)
         printf("%d ", stack[i]);
-
-    printf("\n");
     return 1;
 }
 
-int isEmpty()
+int main()
 {
-    return (top == -1);
-}
+    int n, x;
 
-int isFull()
-{
-    return (top == MAX - 1);
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &x);
+        push(x);
+    }
+
+    printf("Stack: ");
+    display();
+
+    printf("\nTop = %d", peek());
+    printf("\nPopped = %d", pop());
+
+    return 0;
 }
