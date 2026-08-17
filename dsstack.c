@@ -21,7 +21,7 @@ int main()
     int i, j = 0;
     char c;
 
-    printf("Enter infix expression: ");
+    printf("Enter infix: ");
     scanf("%s", infix);
 
     for (i = 0; infix[i] != '\0'; i++)
@@ -38,16 +38,19 @@ int main()
         }
         else if (c == ')')
         {
-            while (top != -1 && stack[top] != '(')
+            while (stack[top] != '(')
                 postfix[j++] = stack[top--];
 
             top--;
         }
         else
         {
+            // Left-to-right associativity
             while (top != -1 &&
                    precedence(stack[top]) >= precedence(c))
+            {
                 postfix[j++] = stack[top--];
+            }
 
             stack[++top] = c;
         }
@@ -58,7 +61,7 @@ int main()
 
     postfix[j] = '\0';
 
-    printf("Postfix expression: %s", postfix);
+    printf("Postfix: %s", postfix);
 
     return 0;
 }
